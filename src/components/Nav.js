@@ -1,7 +1,8 @@
 import React from "react";
 import piggy from "../assets/porco.png";
 
-const Nav = () => {
+const Nav = ({ onHandleGreaseToggle, greasedToggle }) => {
+
 	return (
 		<div className="navWrapper">
 			<span className="headerText">HogWild</span>
@@ -11,6 +12,9 @@ const Nav = () => {
 			<span className="normalText">
 				A React App for County Fair Hog Fans
 			</span>
+			<ul></ul>
+			<button onClick={onHandleGreaseToggle}>Button</button>
+			<button>Sort Here</button>
 		</div>
 	);
 };

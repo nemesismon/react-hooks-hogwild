@@ -9,14 +9,14 @@ function App() {
 	const [currentHogs, setCurrentHogs] = useState(hogs);
 	const [greasedToggle, setGreasedToggle] = useState("");
 
-	function handleCardClick () {
-		
+	const handleGreaseToggle = () => {
+		setGreasedToggle(!greasedToggle);
 	}
 
 	return (
 		<div className="App">
-			<Nav />
-			<PigsOnParade currentHogs={currentHogs} greasedToggle={greasedToggle} onHandleCardClick={handleCardClick}/>
+			<Nav onHandleGreaseToggle={handleGreaseToggle}/>
+			<PigsOnParade currentHogs={currentHogs} greasedToggle={greasedToggle}/>
 		</div>
 	);
 }
