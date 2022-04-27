@@ -1,7 +1,19 @@
 import React from "react";
 import piggy from "../assets/porco.png";
 
-const Nav = ({ onHandleGreaseToggle, greasedToggle }) => {
+const Nav = ({ onHandleGreaseToggle, greasedToggle, onHandleHogNameSort, onHandleHogWeightSort }) => {
+
+	console.log(greasedToggle);
+
+	const greasedToggleButton = () => {
+		if (greasedToggle === undefined) {
+			return "Grease Toggle";
+		} else if (greasedToggle === true) {
+			return "Greased Hogs";
+		} else if (greasedToggle === false) {
+			return "Ungreased Hogs";
+		}
+	}
 
 	return (
 		<div className="navWrapper">
@@ -13,8 +25,9 @@ const Nav = ({ onHandleGreaseToggle, greasedToggle }) => {
 				A React App for County Fair Hog Fans
 			</span>
 			<ul></ul>
-			<button onClick={onHandleGreaseToggle}>Button</button>
-			<button>Sort Here</button>
+			<button onClick={onHandleGreaseToggle}>{greasedToggleButton()}</button>
+			<button onClick={onHandleHogNameSort}>Sort By Name</button>
+			<button onClick={onHandleHogWeightSort}>Sort By Weight</button>
 		</div>
 	);
 };

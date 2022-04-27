@@ -15,10 +15,10 @@ const [hogSelected, setHogSelected] = useState(false);
         if (hog.select === true) {        
             return (
                 <div className="details">
-                    {hog.specialty}
-                    {hog.weight}
-                    {hog.greased}
-                    {hog["highest medal achieved"]}
+                    <ul>Specialty: {hog.specialty}</ul>
+                    <ul>Weight: {hog.weight}</ul>
+                    <ul>Greased: {hog.greased}</ul>
+                    <ul>Highest Medal Achieved: {hog["highest medal achieved"]}</ul>
                 </div>
             )
         } else {
@@ -31,7 +31,7 @@ const [hogSelected, setHogSelected] = useState(false);
         <div onClick={handleHogSelected}>  
             <h3>{hog.name}</h3>
             <img src={hog.image} alt={hog.name}/>
-            {showSelectedHogDetails}
+            {showSelectedHogDetails()}
         </div>  
     </div>
     )
